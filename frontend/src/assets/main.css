@@ -1,0 +1,48 @@
+
+:root {
+  color-scheme: light;
+  --paper: #ffffff;
+  --ink: #272c29;
+  --muted: #555d57;
+  --rule: #d9dbd2;
+  --accent: #486451;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+* { box-sizing: border-box; }
+
+body, h1, h2, p, ul { margin: 0; }
+body { line-height: 1.6; }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.frame { width: min(74rem, 89%); margin-inline: auto; }
+.site-header { border-bottom: 1px solid var(--rule); }
+
+nav { display: flex; gap: clamp(1.5rem, 4vw, 3rem); align-items: stretch; min-height: 4.25rem; }
+nav a { display: flex; align-items: center; text-decoration: none; border-bottom: 2px solid transparent; }
+nav a:hover, .text-link:hover, .back:hover { color: var(--accent); }
+nav a.router-link-exact-active, nav a[aria-current="location"] { border-color: var(--accent); }
+
+
+.skip { position: absolute; left: 1rem; top: -6rem; }
+.skip:focus { top: .5rem; padding: .5rem; background: white; z-index: 1; }
+
+h1, h2 {font-weight: 400; line-height: 1.08;}
+
+.page { padding-block: clamp(3rem, 8vw, 7rem); }
+.page h1 { font-size: clamp(2.8rem, 6vw, 5.2rem); letter-spacing: -.045em; }
+.grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2.75rem; }
+.card { display: flex; height: 100%; min-height: 13rem; flex-direction: column; text-decoration: none; background: #fffefa; border: 1px solid var(--rule); border-radius: .55rem; padding: 1.6rem; }
+.card:hover, .card:focus-visible { border-color: var(--accent); background: #f3f5ee; }
+.card h2 { font-size: 2rem; letter-spacing: -.035em; }
+.card p { margin: .75rem 0 1.5rem; color: var(--muted); overflow-wrap: anywhere; }
+.arrow { margin: auto 0 0 auto; font-size: 1.35rem; color: var(--accent); }
+.intro, .body-text { max-width: 58ch; margin-top: 1.5rem; color: var(--muted); }
+.intro { font-size: clamp(1.15rem, 2vw, 1.45rem); }
+.text-link, .back { display: inline-block; text-underline-offset: .25em; }
+.text-link { margin-top: 2rem; }
+.back { margin-bottom: 2rem; }
+@media (max-width: 55rem) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 36rem) { .grid { grid-template-columns: 1fr; } .card { min-height: 11rem; } }
